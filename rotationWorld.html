@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地球转动</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            background: #8d8;
+            padding: 10px;
+        }
+        .heroWorld{
+            margin: 0px auto;
+            border: 2px solid white;
+            border-radius: 50%;
+            background: url(images/world.png);
+            background-size: cover;
+            background-position: 25% 0;
+            width:200px;
+            height:200px;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+            -webkit-animation-name: map;
+            animation-name: map;
+        }
+        @-webkit-keyframes map{
+            0%{background-position:625% 0;}
+            100%{background-position:25% 0;}
+        }
+        @keyframes map{
+            0%{background-position:625% 0;}
+            100%{background-position:25% 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+       <div class="heroWorld"></div>
+    </div>
+</body>
+</html>
