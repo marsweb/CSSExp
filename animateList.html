@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画效果列表</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+        body{
+            font-family: "微软雅黑";
+        }
+        .anobj{
+            width: 100px;
+            height: 100px;
+            margin: 40px auto;
+            background-color: aquamarine;
+        }
+        .controllerBox{
+            margin:20px;
+        }
+        .controllerBox>li{
+            cursor: pointer;
+            color: brown;
+        }
+        li.active{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul class="controllerBox list-inline">
+        <li class="active">bounce</li><li>flash</li><li>pulse</li><li>rubberBand</li><li>shake</li><li>swing</li>
+        <li>tada</li><li>wobble</li><li>jello</li><li>bounceIn</li><li>bounceInDown</li><li>bounceInLeft</li>
+        <li>bounceInRight</li><li>bounceInUp</li><li>bounceOut</li><li>bounceOutDown</li><li>bounceOutLeft</li>
+        <li>bounceOutRight</li><li>bounceOutUp</li><li>fadeIn</li><li>fadeInDown</li><li>fadeInDownBig</li>
+        <li>fadeInLeft</li><li>fadeInLeftBig</li><li>fadeInRight</li><li>fadeInRightBig</li><li>fadeInUp</li>
+        <li>fadeInUpBig</li><li>fadeOut</li><li>fadeOutDown</li><li>fadeOutDownBig</li><li>fadeOutLeft</li>
+        <li>fadeOutLeftBig</li><li>fadeOutRight</li><li>fadeOutRightBig</li><li>fadeOutUp</li><li>fadeOutUpBig</li>
+        <li>flipInX</li><li>flipInY</li><li>flipOutX</li><li>flipOutY</li><li>lightSpeedIn</li><li>lightSpeedOut</li>
+        <li>rotateIn</li><li>rotateInDownLeft</li><li>rotateInDownRight</li><li>rotateInUpLeft</li><li>rotateInUpRight</li>
+        <li>rotateOut</li><li>rotateOutDownLeft</li><li>rotateOutDownRight</li><li>rotateOutUpLeft</li>
+        <li>rotateOutUpRight</li><li>hinge</li><li>rollIn</li><li>rollOut</li><li>zoomIn</li><li>zoomInDown</li>
+        <li>zoomInLeft</li><li>zoomInRight</li><li>zoomInUp</li><li>zoomOut</li><li>zoomOutDown</li><li>zoomOutLeft</li>
+        <li>zoomOutRight</li><li>zoomOutUp</li><li>slideInDown</li><li>slideInLeft</li><li>slideInRight</li>
+        <li>slideInUp</li><li>slideOutDown</li><li>slideOutLeft</li><li>slideOutRight</li><li>slideOutUp</li>
+    </ul>
+    <div class="anobj animated infinite bounce"></div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".controllerBox>li").click(function(){
+                var oldAnimateName=$(this).siblings(".active").text();
+                var newAnimateName=$(this).text();
+                //切换动画效果
+                $(".anobj").removeClass(oldAnimateName);
+                $(".anobj").addClass(newAnimateName);
+                //切换高亮样式
+                $(this).siblings(".active").removeClass("active");
+                $(this).addClass("active");
+                
+            });
+        });
+    </script>
+</body>
+</html>
