@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件样式美化</title>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        .btn_addPic{
+            display: inline-block;
+            position: relative;
+            height: 39px;
+            overflow: hidden;
+            padding: 0 30px;
+            border: 1px solid #EBEBEB;
+            background: none repeat scroll 0 0 #F3F3F3;
+            color: #999999;
+            font: 14px/39px 'MicroSoft Yahei','Simhei';
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn_addPic img {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            overflow: hidden;
+            margin: 10px 5px 10px 0;
+            line-height: 20em;
+            vertical-align: middle;
+        }
+        .filePrew {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 140px;
+            height: 39px;
+            cursor: pointer;
+            opacity: 0;
+            filter:alpha(opacity: 0);
+        }
+        #filename{
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <a href="javascript:void(0);" class="btn_addPic">
+           <span><img src="images/addFile.png" alt="" width="15px">添加文件</span>
+           <input type="file" tabindex="3" title="支持jpg、jpeg、gif、png格式，文件小于5M" size="3" name="pic" class="filePrew">
+           <span id="filename"></span>
+        </a>
+    </form>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input[type=file]").change(function(){
+                var fileVal=$(this).val();
+                $("#filename").html(fileVal);
+            });
+        });
+    </script>
+</body>
+</html>
